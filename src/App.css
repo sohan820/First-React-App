@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Background */
+.bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff5f9e, #ffc371);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Floating hearts */
+.hearts::before,
+.hearts::after {
+  content: "❤️ 💕 💖 💘 💗";
+  position: absolute;
+  font-size: 24px;
+  animation: float 15s linear infinite;
+  opacity: 0.4;
+}
+
+.hearts::after {
+  animation-duration: 20s;
+  top: 50%;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(-100vh);
+  }
+}
+
+/* Glass Card */
+.card {
+  width: 100%;
+  max-width: 420px;
+  padding: 35px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Screens */
+.screen h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.screen p {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.95;
+  margin-bottom: 25px;
+}
+
+/* Buttons */
+button,
+.call {
+  padding: 12px 26px;
+  border-radius: 30px;
+  border: none;
+  background: #fff;
+  color: #ff4b7d;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover,
+.call:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+.fade {
+  animation: fade 1s ease;
+}
+
+.slide {
+  animation: slide 1s ease;
+}
+
+.pop {
+  animation: pop 0.7s ease;
+}
+
+.glow {
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  }
+  to {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .card {
+    margin: 20px;
+    padding: 25px;
+  }
+
+  .screen h1 {
+    font-size: 24px;
+  }
+}
