@@ -208,7 +208,7 @@ export default function App() {
               </div>
 
               <div className="red-call-section">
-                <a href="tel:+918101037745" className="red-call-btn">
+                <a href="tel:+916295301151" className="red-call-btn">
                   <span className="call-icon-red">📞</span>
                   <span className="call-text-red">Hear My Heartbeat</span>
                   <span className="call-ripple-red"></span>
